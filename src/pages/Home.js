@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom'
 import Hero from '../Components/Hero'
 import Banner from '../Components/Banner'
 import Services from '../Components/Services'
+import FeaturesRooms from '../Components/FeaturesRooms'
 
 const Home = () => {
     return (
@@ -18,6 +19,7 @@ const Home = () => {
                </Banner>
              </Hero>
              <Services></Services>
+             <FeaturesRooms></FeaturesRooms>
             
         </div>
     )
