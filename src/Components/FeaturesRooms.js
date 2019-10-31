@@ -6,17 +6,16 @@ import Title from './Titles'
 import { RoomContext } from '../Context'
 
 const FeaturesRooms = () => {
- const {featuredRooms:rooms, loading} = useContext(RoomContext)
-  const room = rooms.map((room,i)=>(
-      <Room key={i} room={room} />
-  ))
-
+  let {featuredRooms:rooms, loading} = useContext(RoomContext)
+ 
     return (
         <section className="featured-rooms">
             <Title title="featured Room"/>
             <div className="featured-rooms-center">
-                {loading?<Loading/>:<Room/>}
-                {console.log(loading)}
+               { loading?<Loading/>:rooms.map((room,i)=>(
+                  <Room key={i} room={room}/>
+                ))}
+                
             </div>
             
         </section>

@@ -27,7 +27,7 @@ const RoomProvider = ({ children }) => {
         const rooms = formatData(items)
         let featuredRooms = rooms.filter((room)=>room.featured === true )
         setInitialState({
-            rooms, featuredRooms, sortedRooms:rooms, loading:false
+            rooms, featuredRooms, sortedRooms:rooms, loading: false
         })
         
     },[])
