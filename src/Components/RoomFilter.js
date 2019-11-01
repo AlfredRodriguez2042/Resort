@@ -1,11 +1,11 @@
 import React from 'react'
 
-const Room = () => {
+const RoomFilter = () => {
     return (
         <div>
-            room
+            room Filter
         </div>
     )
 }
 
-export default Room
+export default RoomFilter

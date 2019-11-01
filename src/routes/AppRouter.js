@@ -3,7 +3,7 @@ import { Switch, Route } from 'react-router-dom'
 
 import Home from '../pages/Home'
 import Rooms from '../pages/Rooms'
-import Room from '../pages/Room'
+import Room from '../pages/SingleRoom'
 import Page404 from '../pages/Page404'
 
 const AppRouter = () => {

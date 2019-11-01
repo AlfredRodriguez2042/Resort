@@ -1,4 +1,4 @@
-import React, { createContext, useState, useEffect } from 'react'
+import React, { createContext, useState, useEffect, useContext } from 'react'
 
 // Data
 import items from '../data'
@@ -31,14 +31,28 @@ const RoomProvider = ({ children }) => {
         })
         
     },[])
-    
+
+    const getRoom = (slug)=>{
+        let temRooms = [...initialState.rooms]
+        const room = temRooms.find( room=>room.slug===slug)
+        return room
+
+    }
+        
     return (
-       <RoomContext.Provider value={initialState}>
+       <RoomContext.Provider value={{ ...initialState, getRoom}}>
            { children }
        </RoomContext.Provider>
     )
 }
 
-
+export function RoomHOC (Component){
+    const consumer = useContext(RoomContext)
+    return function wrapper (props){
+        return <consumer>
+           { value => <Component />}
+        </consumer>
+    }
+}
 
 export {  RoomProvider, RoomContext }

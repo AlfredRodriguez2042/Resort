@@ -4,6 +4,7 @@ import { Link} from 'react-router-dom'
 
 import Hero from '../Components/Hero'
 import Banner from '../Components/Banner'
+import RoomContainer from '../Components/RoomContainer'
 
 const Rooms = () => {
     return (
@@ -15,6 +16,7 @@ const Rooms = () => {
                     </Link>
                 </Banner>
             </Hero>
+            <RoomContainer/>
         </div>
     )
 }

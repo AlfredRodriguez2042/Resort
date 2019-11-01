@@ -30,6 +30,7 @@
   },
   "devDependencies": {
     "react-icons": "^3.8.0",
-    "react-router-dom": "^5.1.2"
+    "react-router-dom": "^5.1.2",
+    "styled-components": "^4.4.1"
   }
 }
