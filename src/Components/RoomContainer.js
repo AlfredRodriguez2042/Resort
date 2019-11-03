@@ -1,13 +1,16 @@
 import React,{ useContext } from 'react'
 
-import Roomfilter from './RoomFilter'
+// Compoenents
 import RoomList from './RoomList'
 import RoomFilter from './RoomFilter'
 import Loading from './Loading'
+import { HOC } from '../Context/HOC'
 import { RoomContext } from '../Context'
 const RoomContainer = () => {
-    const RoomComsumer = useContext(RoomContext)
-    const { loading, sortedRooms, rooms} = RoomComsumer
+  
+    const { loading, sortedRooms, rooms } = useContext(RoomContext)
+
+   
     if(loading){
         return <Loading/>
     }
@@ -15,9 +18,8 @@ const RoomContainer = () => {
        <div>
            <RoomFilter rooms={rooms}/>
            <RoomList rooms={sortedRooms}/>
-           {console.log(loading)}
-       </div>
+        </div>
     )    
 }
 
-export default RoomContainer
+export default HOC(RoomContainer)
