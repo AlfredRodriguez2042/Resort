@@ -49,8 +49,8 @@ const RoomFilter = ({rooms}) => {
                     id="capacity"
                     value={capacity}
                     className="form-control"
-                    //onChange={ changeInput }
-                   // onClick={filterRooms}
+                    onChange={ changeInput }
+                    onClick={filterRooms}
                     >
                       {peoples}
                     </select>
