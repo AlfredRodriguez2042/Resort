@@ -43,7 +43,7 @@ const RoomProvider = ({ children }) => {
             featuredRooms,
             sortedRooms:rooms,
             loading: false,
-            price: maxprice,
+            maxPrice: maxprice,
             maxSize: maxsize
         })
     
@@ -56,34 +56,39 @@ const RoomProvider = ({ children }) => {
         return room
 
     }
-    const changeInput = (e,cb)=>{
+    const changeInput = (e,)=>{
         e.preventDefault()
         const type = e.target.type
         const name = e.target.name
         const value = e.type === "checkbox" ? e.target.checked : e.target.value
-        console.log(type,name,value)
 
         setInitialState({
             ...initialState,
             [name]:value,
         })
-       return cb => filterRooms()
+       
     }
     
-    const filterRooms = (data)=>{
+    const filterRooms = ()=>{
         const {rooms,type, capacity,
              price, minSize, maxSize,
               breakfast, pets} = initialState
         let tempRooms = [...rooms]
+        let capacities = parseInt(capacity)
         if(type !== "all"){
            tempRooms = tempRooms.filter(item => item.type === type)
+        }
+        if(capacity !== 1){
+            tempRooms = tempRooms.filter(item => item.capacity >= capacities )
+
         }
         setInitialState({
            ...initialState,
             sortedRooms: tempRooms
         })
-       console.log(tempRooms)
+       
     }
+  
     
    
         
